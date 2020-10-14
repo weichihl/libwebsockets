@@ -88,10 +88,11 @@ lws_ssl_client_bio_create(struct lws *wsi)
 				_WSI_TOKEN_CLIENT_ALPN) > 0)
 			alpn_comma = hostname;
 	}
-
+	/** #BUG, #YC_TBD.*/
+	#if 0
 	lwsl_info("%s: %p: client conn sending ALPN list '%s'\n",
 		  __func__, wsi, alpn_comma);
-
+	#endif
 	protos.len = lws_alpn_comma_to_openssl(alpn_comma, protos.data,
 					       sizeof(protos.data) - 1);
 

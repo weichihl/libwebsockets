@@ -147,9 +147,8 @@ int alloc_file(struct lws_context *context, const char *filename, uint8_t **buf,
 	       lws_filepos_t *amount)
 {
 	nvs_handle nvh;
-	size_t s;
+	size_t s = 0;
 	int n = 0;
-
 	ESP_ERROR_CHECK(nvs_open("lws-station", NVS_READWRITE, &nvh));
 	if (nvs_get_blob(nvh, filename, NULL, &s) != ESP_OK) {
 		n = 1;
@@ -165,7 +164,6 @@ int alloc_file(struct lws_context *context, const char *filename, uint8_t **buf,
 		n = 1;
 		goto bail;
 	}
-
 	*amount = s;
 	(*buf)[s] = '\0';
 
