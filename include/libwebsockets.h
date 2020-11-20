@@ -259,7 +259,7 @@ struct sockaddr_in {
 #if !defined(LWS_AMAZON_RTOS)
 /* AMAZON RTOS has its own setting via MTK_MBEDTLS_CONFIG_FILE */
 #undef MBEDTLS_CONFIG_FILE
-//#define MBEDTLS_CONFIG_FILE <mbedtls/esp_config.h>///////////////need to be replaced by our plateform
+#define MBEDTLS_CONFIG_FILE <mbedtls/config.h>////////////replaced by our plateform
 #endif
 #endif
 #include <mbedtls/ssl.h>

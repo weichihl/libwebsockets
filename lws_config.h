@@ -9,7 +9,7 @@
 #define LWS_INSTALL_DATADIR "/usr/local/share"
 #define LWS_LIBRARY_VERSION_MAJOR 4
 #define LWS_LIBRARY_VERSION_MINOR 0
-#define LWS_LIBRARY_VERSION_PATCH_ELABORATED 99-v4.1.0-rc1-2-g8006992f
+#define LWS_LIBRARY_VERSION_PATCH_ELABORATED 99-v4.1.0-rc1-2-g4ea09d82
 #define LWS_LIBRARY_VERSION_PATCH 99
 
 /* LWS_LIBRARY_VERSION_NUMBER looks like 1005001 for e.g. version 1.5.1 */
@@ -24,17 +24,17 @@
 /* #undef LWS_EXT_PTHREAD_LIBRARIES */
 
 /* #undef LWS_AVOID_SIGPIPE_IGN */
-#define LWS_BUILD_HASH "v4.1.0-rc1-2-g8006992f"
+#define LWS_BUILD_HASH "v4.1.0-rc1-2-g4ea09d82"
 /* #undef LWS_BUILTIN_GETIFADDRS */
 /* #undef LWS_CLIENT_HTTP_PROXYING */
 /* #undef LWS_DETECTED_PLAT_IOS */
 /* #undef LWS_FALLBACK_GETHOSTBYNAME */
 #define LWS_HAS_INTPTR_T
-#define LWS_HAS_GETOPT_LONG
+/* #undef LWS_HAS_GETOPT_LONG */
 /* #undef LWS_HAVE__ATOI64 */
-#define LWS_HAVE_ATOLL
+/* #undef LWS_HAVE_ATOLL */
 /* #undef LWS_HAVE_BN_bn2binpad */
-#define LWS_HAVE_CLOCK_GETTIME
+/* #undef LWS_HAVE_CLOCK_GETTIME */
 /* #undef LWS_HAVE_EC_POINT_get_affine_coordinates */
 /* #undef LWS_HAVE_ECDSA_SIG_set0 */
 /* #undef LWS_HAVE_EVP_MD_CTX_free */
@@ -47,26 +47,26 @@
 /* #undef LWS_HAVE_EVP_aes_256_cfb128 */
 /* #undef LWS_HAVE_EVP_aes_128_xts */
 /* #undef LWS_HAVE_EVP_PKEY_new_raw_private_key */
-#define LWS_HAVE_EXECVPE
+/* #undef LWS_HAVE_EXECVPE */
 /* #undef LWS_HAVE_LIBCAP */
 /* #undef LWS_HAVE_HMAC_CTX_new */
-#define LWS_HAVE_MALLOC_H
-#define LWS_HAVE_MALLOC_TRIM
-#define LWS_HAVE_MALLOC_USABLE_SIZE
-/* #undef LWS_HAVE_mbedtls_md_setup */
-/* #undef LWS_HAVE_mbedtls_net_init */
-/* #undef LWS_HAVE_mbedtls_rsa_complete */
-/* #undef LWS_HAVE_mbedtls_internal_aes_encrypt */
-/* #undef LWS_HAVE_mbedtls_ssl_conf_alpn_protocols */
-/* #undef LWS_HAVE_mbedtls_ssl_get_alpn_protocol */
-/* #undef LWS_HAVE_mbedtls_ssl_conf_sni */
-/* #undef LWS_HAVE_mbedtls_ssl_set_hs_ca_chain */
-/* #undef LWS_HAVE_mbedtls_ssl_set_hs_own_cert */
-/* #undef LWS_HAVE_mbedtls_ssl_set_hs_authmode */
-/* #undef LWS_HAVE_MBEDTLS_NET_SOCKETS */
+/* #undef LWS_HAVE_MALLOC_H */
+/* #undef LWS_HAVE_MALLOC_TRIM */
+/* #undef LWS_HAVE_MALLOC_USABLE_SIZE */
+#define LWS_HAVE_mbedtls_md_setup
+#define LWS_HAVE_mbedtls_net_init
+#define LWS_HAVE_mbedtls_rsa_complete
+#define LWS_HAVE_mbedtls_internal_aes_encrypt
+#define LWS_HAVE_mbedtls_ssl_conf_alpn_protocols
+#define LWS_HAVE_mbedtls_ssl_get_alpn_protocol
+#define LWS_HAVE_mbedtls_ssl_conf_sni
+#define LWS_HAVE_mbedtls_ssl_set_hs_ca_chain
+#define LWS_HAVE_mbedtls_ssl_set_hs_own_cert
+#define LWS_HAVE_mbedtls_ssl_set_hs_authmode
+#define LWS_HAVE_MBEDTLS_NET_SOCKETS
 /* #undef LWS_HAVE_NEW_UV_VERSION_H */
 /* #undef LWS_HAVE_OPENSSL_ECDH_H */
-#define LWS_HAVE_PIPE2
+/* #undef LWS_HAVE_PIPE2 */
 /* #undef LWS_HAVE_EVENTFD */
 #define LWS_HAVE_PTHREAD_H
 /* #undef LWS_HAVE_RSA_SET0_KEY */
@@ -87,10 +87,10 @@
 /* #undef LWS_HAVE_TLS_CLIENT_METHOD */
 /* #undef LWS_HAVE_TLSV1_2_CLIENT_METHOD */
 /* #undef LWS_HAVE_UV_VERSION_H */
-#define LWS_HAVE_VFORK
+/* #undef LWS_HAVE_VFORK */
 /* #undef LWS_HAVE_X509_get_key_usage */
 /* #undef LWS_HAVE_X509_VERIFY_PARAM_set1_host */
-#define LWS_LIBRARY_VERSION "4.0.99-v4.1.0-rc1-2-g8006992f"
+#define LWS_LIBRARY_VERSION "4.0.99-v4.1.0-rc1-2-g4ea09d82"
 #define LWS_LOGGING_BITFIELD_CLEAR 0
 #define LWS_LOGGING_BITFIELD_SET 0
 /* #undef LWS_MINGW_SUPPORT */
@@ -125,11 +125,11 @@
 /* #undef LWS_WITH_DETAILED_LATENCY */
 /* #undef LWS_WITH_DIR */
 /* #undef LWS_WITH_DRIVERS */
-#define LWS_WITH_ESP32
+/* #undef LWS_WITH_ESP32 */
 /* #undef LWS_HAVE_EVBACKEND_LINUXAIO */
 /* #undef LWS_HAVE_EVBACKEND_IOURING */
 /* #undef LWS_WITH_EXTERNAL_POLL */
-#define LWS_WITH_FILE_OPS
+/* #undef LWS_WITH_FILE_OPS */
 /* #undef LWS_WITH_FSMOUNT */
 /* #undef LWS_WITH_FTS */
 /* #undef LWS_WITH_GENCRYPTO */
@@ -150,7 +150,7 @@
 /* #undef LWS_WITH_LIBEVENT */
 /* #undef LWS_WITH_LIBUV */
 #define LWS_WITH_LWSAC
-#define LWS_LOGS_TIMESTAMP
+/* #undef LWS_LOGS_TIMESTAMP */
 #define LWS_WITH_MBEDTLS
 /* #undef LWS_WITH_MINIZ */
 #define LWS_WITH_NETWORK
