@@ -115,7 +115,8 @@ typedef unsigned long long lws_intptr_t;
 #endif
 
 #else /* NOT WIN32 */
-#include <unistd.h>
+//#include <unistd.h>
+#include <FreeRTOS_POSIX/unistd.h>
 #if defined(LWS_HAVE_SYS_CAPABILITY_H) && defined(LWS_HAVE_LIBCAP)
 #include <sys/capability.h>
 #endif
@@ -124,24 +125,6 @@ typedef unsigned long long lws_intptr_t;
 #include <sys/socket.h>
 #include <netinet/in.h>
 #endif
-
-/////////////////////////////////////////////////////////////////////////// by Kevin
-typedef unsigned long socklen_t;  //// 
-struct sockaddr { 
-  unsigned short  sa_family;  // 2 bytes address family, AF_xxx 
-  char       sa_data[14];   // 14 bytes of protocol address 
-}; 
-struct in_addr { 
-  unsigned long s_addr;     // 4 bytes load with inet_pton() 
-}; 
-// IPv4 AF_INET sockets: 
-struct sockaddr_in { 
-  short      sin_family;    // 2 bytes e.g. AF_INET, AF_INET6 
-  unsigned short  sin_port;  // 2 bytes e.g. htons(3490) 
-  struct in_addr  sin_addr;   // 4 bytes see struct in_addr, below 
-  char       sin_zero[8];   // 8 bytes zero this if you want to 
-}; 
-//////////////////////////////////////////////////////////////////////////////////
 
 #define LWS_INLINE inline
 #define LWS_O_RDONLY O_RDONLY
@@ -201,7 +184,8 @@ struct sockaddr_in {
 #if !defined(LWS_PLAT_OPTEE)
 //#include <sys/time.h>
 #include <time.h>
-#include <unistd.h>
+//#include <unistd.h>
+#include <FreeRTOS_POSIX/unistd.h>
 #endif
 #endif
 

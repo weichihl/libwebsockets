@@ -26,7 +26,8 @@
 #define __LWS_PRIVATE_LIB_MISC_LWSAC_H__
 
 #if !defined(LWS_PLAT_OPTEE)
-#include <sys/stat.h>
+//#include <sys/stat.h>
+#include <fatfs_wrap.h> //////////////////////////
 #endif
 
 /* under page size of 4096 to allow overhead */

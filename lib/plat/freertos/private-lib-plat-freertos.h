@@ -35,11 +35,14 @@
  #include <fcntl.h>
 #endif
 
- #include <strings.h>
- #include <unistd.h>
- #include <sys/stat.h>
- #include <sys/types.h>
- #include <sys/time.h>
+ //#include <strings.h> //////////////////////
+ //#include <unistd.h> ////////////////////
+ #include <FreeRTOS_POSIX/unistd.h> ////////////////////
+ //#include <sys/stat.h> ///////////////////
+ //#include <sys/types.h>
+ #include <FreeRTOS_POSIX/sys/types.h>
+ //#include <sys/time.h>
+ #include <time.h>
  #include <netdb.h>
 
  #ifndef __cplusplus

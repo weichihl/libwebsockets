@@ -56,16 +56,19 @@
 #include <assert.h>
 
 #ifdef LWS_HAVE_SYS_TYPES_H
- #include <sys/types.h>
+  //#include <sys/types.h>
+  #include <FreeRTOS_POSIX/sys/types.h>
 #endif
 #if defined(LWS_HAVE_SYS_STAT_H) && !defined(LWS_PLAT_OPTEE)
- #include <sys/stat.h>
+ //#include <sys/stat.h>
 #endif
 
 #if LWS_MAX_SMP > 1 || defined(LWS_WITH_SYS_SMD)
  /* https://stackoverflow.com/questions/33557506/timespec-redefinition-error */
  #define HAVE_STRUCT_TIMESPEC
- #include <pthread.h>
+ //#include <pthread.h>
+ #include <FreeRTOS_POSIX.h>
+ #include <FreeRTOS_POSIX/pthread.h>
 #else
  #if !defined(pid_t) && defined(WIN32)
  #define pid_t int
