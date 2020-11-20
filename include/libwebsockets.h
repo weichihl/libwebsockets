@@ -473,6 +473,27 @@ struct sockaddr_in;
 #define LWS_POLLIN (POLLIN)
 #define LWS_POLLOUT (POLLOUT)
 #endif
+//////////////////////////////////////////
+	#define  MSG_NOSIGNAL 0x4000
+	#define	EAGAIN		11
+	#define EINTR		4
+	#define EWOULDBLOCK	EAGAIN
+	#define	EADDRINUSE	98	
+	#define INADDR_ANY	0
+	#define AF_INET		2
+	#define SHUT_WR 1
+	#define AF_UNSPEC	0
+	#define PF_UNSPEC	0
+	#define SOCK_STREAM	1
+	#define SOCK_DGRAM	2
+	# define AI_PASSIVE	0x0001
+	#define IPPROTO_UDP	17
+	#define SOL_SOCKET	1
+	#define SO_SNDBUF	7
+	#define	EISCONN		106	
+	#define	EALREADY	114
+	#define	EINPROGRESS	115
+//////////////////////////////////////////
 #endif
 
 
