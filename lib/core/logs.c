@@ -28,6 +28,9 @@
 //#include <sys/types.h>
 #include <FreeRTOS_POSIX/sys/types.h>
 #endif
+int isatty(int file){ /////////////////
+  return 1;
+}
 
 #if defined(LWS_PLAT_OPTEE)
 void lwsl_emit_optee(int level, const char *line);
