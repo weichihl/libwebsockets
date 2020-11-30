@@ -475,6 +475,7 @@ struct sockaddr_in;
 #endif
 //////////////////////////////////////////
 	#define  MSG_NOSIGNAL 0x4000
+#if 0
 	#define	EAGAIN		11
 	#define EINTR		4
 	#define EWOULDBLOCK	EAGAIN
@@ -493,6 +494,7 @@ struct sockaddr_in;
 	#define	EISCONN		106	
 	#define	EALREADY	114
 	#define	EINPROGRESS	115
+#endif
 //////////////////////////////////////////
 #endif
 
