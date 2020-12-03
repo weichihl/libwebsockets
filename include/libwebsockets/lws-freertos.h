@@ -71,7 +71,7 @@ struct pollfd {
 ////#include "esp_spi_flash.h"
 #include "timers.h"
 
-#if defined(LWS_ESP_PLATFORM)
+#if defined(LWS_ESP_PLATFORM) || defined(LWS_RTK_PLATFORM)
 #include "lwip/sockets.h"
 #include "lwip/netdb.h"
 #if defined(LWS_WITH_DRIVERS)

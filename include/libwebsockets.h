@@ -474,7 +474,7 @@ struct sockaddr_in;
 #define LWS_POLLOUT (POLLOUT)
 #endif
 //////////////////////////////////////////
-	#define  MSG_NOSIGNAL 0x4000
+	#define  MSG_NOSIGNAL   0 //0x4000
 #if 0
 	#define	EAGAIN		11
 	#define EINTR		4

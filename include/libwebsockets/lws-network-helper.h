@@ -29,7 +29,7 @@
  */
 ///@{
 
-#if defined(LWS_ESP_PLATFORM)
+#if defined(LWS_ESP_PLATFORM) || defined(LWS_RTK_PLATFORM)
 #include <lwip/sockets.h>
 #endif
 

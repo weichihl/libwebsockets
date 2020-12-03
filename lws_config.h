@@ -30,11 +30,11 @@
 /* #undef LWS_DETECTED_PLAT_IOS */
 /* #undef LWS_FALLBACK_GETHOSTBYNAME */
 #define LWS_HAS_INTPTR_T
-/* #undef LWS_HAS_GETOPT_LONG */
+#define LWS_HAS_GETOPT_LONG
 /* #undef LWS_HAVE__ATOI64 */
-/* #undef LWS_HAVE_ATOLL */
+#define LWS_HAVE_ATOLL
 /* #undef LWS_HAVE_BN_bn2binpad */
-/* #undef LWS_HAVE_CLOCK_GETTIME */
+#define LWS_HAVE_CLOCK_GETTIME
 /* #undef LWS_HAVE_EC_POINT_get_affine_coordinates */
 /* #undef LWS_HAVE_ECDSA_SIG_set0 */
 /* #undef LWS_HAVE_EVP_MD_CTX_free */
@@ -150,7 +150,7 @@
 /* #undef LWS_WITH_LIBEVENT */
 /* #undef LWS_WITH_LIBUV */
 #define LWS_WITH_LWSAC
-/* #undef LWS_LOGS_TIMESTAMP */
+#define LWS_LOGS_TIMESTAMP
 #define LWS_WITH_MBEDTLS
 /* #undef LWS_WITH_MINIZ */
 #define LWS_WITH_NETWORK

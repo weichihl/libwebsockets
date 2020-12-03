@@ -62,7 +62,9 @@ LWS_VISIBLE LWS_EXTERN int
 lwsl_timestamp(int level, char *p, int len);
 
 #if defined(LWS_PLAT_OPTEE) && !defined(LWS_WITH_NETWORK)
-#define _lws_log(aaa, ...) SMSG(__VA_ARGS__)
+void _lws_log(int filter, const char *format, ...) LWS_FORMAT(2);
+void _lws_logv(int filter, const char *format, va_list vl);
+//#define _lws_log(aaa, ...) SMSG(__VA_ARGS__)
 #else
 LWS_VISIBLE LWS_EXTERN void _lws_log(int filter, const char *format, ...) LWS_FORMAT(2);
 LWS_VISIBLE LWS_EXTERN void _lws_logv(int filter, const char *format, va_list vl);
@@ -116,31 +118,31 @@ LWS_VISIBLE LWS_EXTERN void _lws_logv(int filter, const char *format, va_list vl
  * depending on what was computed
  */
 
-#if (_LWS_ENABLED_LOGS & LLL_ERR)
+#if (_LWS_ENABLED_LOGS & LLL_ERR)//1//(_LWS_ENABLED_LOGS & LLL_ERR)
 #define lwsl_err(...) _lws_log(LLL_ERR, __VA_ARGS__)
 #else
 #define lwsl_err(...) do {} while(0)
 #endif
 
-#if (_LWS_ENABLED_LOGS & LLL_WARN)
+#if (_LWS_ENABLED_LOGS & LLL_WARN)//1//(_LWS_ENABLED_LOGS & LLL_WARN)
 #define lwsl_warn(...) _lws_log(LLL_WARN, __VA_ARGS__)
 #else
 #define lwsl_warn(...) do {} while(0)
 #endif
 
-#if (_LWS_ENABLED_LOGS & LLL_NOTICE)
+#if (_LWS_ENABLED_LOGS & LLL_NOTICE)//1//(_LWS_ENABLED_LOGS & LLL_NOTICE)
 #define lwsl_notice(...) _lws_log(LLL_NOTICE, __VA_ARGS__)
 #else
 #define lwsl_notice(...) do {} while(0)
 #endif
 
-#if (_LWS_ENABLED_LOGS & LLL_INFO)
+#if (_LWS_ENABLED_LOGS & LLL_INFO)//1//(_LWS_ENABLED_LOGS & LLL_INFO)
 #define lwsl_info(...) _lws_log(LLL_INFO, __VA_ARGS__)
 #else
 #define lwsl_info(...) do {} while(0)
 #endif
 
-#if (_LWS_ENABLED_LOGS & LLL_DEBUG)
+#if (_LWS_ENABLED_LOGS & LLL_DEBUG)//1//(_LWS_ENABLED_LOGS & LLL_DEBUG)
 #define lwsl_debug(...) _lws_log(LLL_DEBUG, __VA_ARGS__)
 #else
 #define lwsl_debug(...) do {} while(0)

@@ -82,8 +82,8 @@ lwsl_timestamp(int level, char *p, int len)
 		if (ptm)
 			n = lws_snprintf(p, len,
 				"[%04d/%02d/%02d %02d:%02d:%02d:%04d] %c: ",
-				ptm->tm_year + 1900,
-				ptm->tm_mon + 1,
+				ptm->tm_year, // + 1900,
+				ptm->tm_mon, // + 1,
 				ptm->tm_mday,
 				ptm->tm_hour,
 				ptm->tm_min,
@@ -174,8 +174,8 @@ void _lws_logv(int filter, const char *format, va_list vl)
 #endif
 	int n;
 
-	if (!(log_level & filter))
-		return;
+	if (!(log_level & filter))//if (!(log_level & filter))
+		return;//	return;
 
 	n = vsnprintf(buf, sizeof(buf) - 1, format, vl);
 	(void)n;
@@ -195,6 +195,7 @@ void _lws_logv(int filter, const char *format, va_list vl)
 
 void _lws_log(int filter, const char *format, ...)
 {
+
 	va_list ap;
 
 	va_start(ap, format);
