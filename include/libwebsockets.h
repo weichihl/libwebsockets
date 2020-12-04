@@ -475,7 +475,7 @@ struct sockaddr_in;
 #endif
 //////////////////////////////////////////
 	#define  MSG_NOSIGNAL   0 //0x4000
-#if 0
+#if 1
 	#define	EAGAIN		11
 	#define EINTR		4
 	#define EWOULDBLOCK	EAGAIN
@@ -489,8 +489,8 @@ struct sockaddr_in;
 	#define SOCK_DGRAM	2
 	# define AI_PASSIVE	0x0001
 	#define IPPROTO_UDP	17
-	#define SOL_SOCKET	1
-	#define SO_SNDBUF	7
+	#define SOL_SOCKET	0xfff
+	#define SO_SNDBUF	0x1001
 	#define	EISCONN		106	
 	#define	EALREADY	114
 	#define	EINPROGRESS	115
