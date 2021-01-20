@@ -70,8 +70,15 @@ lwsl_timestamp(int level, char *p, int len)
 #ifdef WIN32
 	ptm = localtime(&o_now);
 #else
+        
+#if defined (__ICCARM__)
 	if (localtime_r(&o_now, &tm))
 		ptm = &tm;
+#else
+        o_now += 8*3600;
+        ptm = localtime(&o_now);
+#endif
+
 #endif
 #endif
 	p[0] = '\0';
@@ -82,8 +89,13 @@ lwsl_timestamp(int level, char *p, int len)
 		if (ptm)
 			n = lws_snprintf(p, len,
 				"[%04d/%02d/%02d %02d:%02d:%02d:%04d] %c: ",
+#if defined (__ICCARM__)                                
 				ptm->tm_year, // + 1900,
 				ptm->tm_mon, // + 1,
+#else
+                                ptm->tm_year + 1900,
+				ptm->tm_mon + 1,
+#endif                                
 				ptm->tm_mday,
 				ptm->tm_hour,
 				ptm->tm_min,
@@ -144,9 +156,19 @@ _lwsl_emit_stderr(int level, const char *line, int ts)
 			m--;
 			n >>= 1;
 		}
+#if defined (__ICCARM__)
 		fprintf(stderr, "%c%s%s%s%c[0m", 27, colours[m], buf, line, 27);
-	} else
+#else                
+                printf("%c%s%s%s%c[0m\n\r", 27, colours[m], buf, line, 27);
+#endif                
+	} else{
+#if defined (__ICCARM__)          
 		fprintf(stderr, "%s%s", buf, line);
+#else                 
+                printf("%s%s\n\r", buf, line);
+#endif                 
+        }
+
 }
 
 void
