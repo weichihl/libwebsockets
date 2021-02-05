@@ -660,10 +660,12 @@ lws_async_dns_query(struct lws_context *context, int tsi, const char *name,
 
 	c = lws_adns_get_cache(dns, name);
 	if (c) {
-		lwsl_info("%s: %s: using cached, c->results %p\n", __func__, name, c->results);
+		lwsl_info("%s: %s: using cached, c->results %p\n", __func__,
+			  name, c->results);
 		m = c->results ? LADNS_RET_FOUND : LADNS_RET_FAILED;
 		if (c->results)
 			c->refcount++;
+
 		if (cb(wsi, name, c->results, m, opaque) == NULL)
 			return LADNS_RET_FAILED_WSI_CLOSED;
 
@@ -843,7 +845,8 @@ lws_async_dns_query(struct lws_context *context, int tsi, const char *name,
 
 failed:
 	lwsl_notice("%s: failed\n", __func__);
-	cb(wsi, NULL, NULL, LADNS_RET_FAILED, opaque);
+	if (!cb(wsi, NULL, NULL, LADNS_RET_FAILED, opaque))
+		return LADNS_RET_FAILED_WSI_CLOSED;
 
 	return LADNS_RET_FAILED;
 }
